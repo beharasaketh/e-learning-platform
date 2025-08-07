@@ -1,5 +1,7 @@
 # E-Learning Platform
 
+🚀 **Live Demo**: [https://e-gnan.web.app](https://e-gnan.web.app)
+
 An interactive e-learning platform focused on:
 - **Logic-building-first** programming education
 - Solving real-world problems using **flowcharts, pseudocode, and creativity**
