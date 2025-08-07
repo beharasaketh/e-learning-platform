@@ -1,0 +1,68 @@
+<div class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand" style="background-color: #233D8A;" id="navbar">
+        <a class="nav-link" routerLink="/user/home"><img class="img-fluid" width="350px" src="Variation 03.png"
+                alt=""></a>
+        <ul class="navbar-nav ms-auto me-5 ">
+            <li class="nav-item m-3 "><a class="nav-link text-white top-nav " routerLink="/user/mylearning">My
+                    learning</a>
+            </li>
+            <li class="nav-item m-3"><a class="nav-link text-white top-nav" routerLink="/user/wishlist">Wishlist</a>
+            </li>
+            <li class="nav-item m-3"><a class="nav-link text-white top-nav" routerLink="/profileUser"><i
+                        class="fa-solid fa-user"></i> {{username}}</a></li>
+        </ul>
+    </nav>
+    <div class="container flex-fill pb-5">
+        <div class="row h-100">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark  pt-5 pb-5">
+        <div class="row">
+            <div class="col-md-2 ms-5">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white bottom-nav" href="https://www.thegnan.in/"
+                            target="_blank">About us</a></li>
+                    <li class="nav-item"><a class="nav-link text-white bottom-nav" href="https://www.thegnan.in/"
+                            target="_blank">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-white bottom-nav" href="https://www.thegnan.in/"
+                            target="_blank">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-white bottom-nav" href="https://www.thegnan.in/"
+                            target="_blank">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white bottom-nav" href="https://www.thegnan.in/"
+                            target="_blank">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link text-white bottom-nav" href="https://www.thegnan.in/"
+                            target="_blank">Community Forum</a></li>
+                    <li class="nav-item"><a class="nav-link text-white bottom-nav" href="https://www.thegnan.in/"
+                            target="_blank">Tutorial Videos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white bottom-nav" href="https://www.thegnan.in/"
+                            target="_blank">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-7 text-center">
+                <img class="img-fluid mb-2" style="max-width: 300px;" src="Variation 03.png" alt="">
+                <p class="text-white">theGnaN Tech Hub — Where Logic Meets Innovation.</p>
+
+                <ul class="list-unstyled d-flex justify-content-center gap-5 fs-4 mt-3">
+                    <li><a class="text-white bottom-nav" href="https://www.instagram.com/_thegnan_/?hl=en"
+                            target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a class="text-white bottom-nav" href=""><i class="fas fa-phone-alt"></i></a></li>
+                    <li><a class="text-white bottom-nav" href="https://www.linkedin.com/in/thegnantechhub/"
+                            target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a class="text-white bottom-nav" href="https://x.com/theGnaNTechHub" target="_blank"><i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a class="text-white bottom-nav" href="https://www.youtube.com/@theGnaNTechHub"><i
+                                class="fab fa-youtube"></i></a></li>
+                    <li><a class="text-white bottom-nav" href="thegnantechhub0@gmail.com"><i
+                                class="fas fa-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

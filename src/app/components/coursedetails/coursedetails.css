@@ -1,0 +1,76 @@
+#enroll-btn {
+    background-color: #233D8A;
+    color: white;
+    margin-left: 80px;
+}
+
+#wishlist-btn {
+    background-color: orange;
+    color: white;
+    margin-left: 20px;
+}
+
+.over {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.over:hover {
+    transform: scale(1.03) translateY(-5px);
+}
+
+.course-card {
+    background: linear-gradient(to bottom right, #fdfdfd, #f5faff);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+#enroll-btn {
+    background-color: #233D8A;
+    color: white;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+#enroll-btn:hover {
+    background-color: #1a2e6d;
+}
+
+#wishlist-btn {
+    border: 2px solid #ccc;
+    color: #233D8A;
+    font-weight: 500;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+#wishlist-btn:hover {
+    background-color: #233D8A;
+    color: white;
+}
+
+.instructor-card,
+.syllabus-card,
+.outcomes-card {
+  background: #ffffff;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instructor-card:hover,
+.syllabus-card:hover,
+.outcomes-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+ul li {
+  padding: 6px 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #444;
+}

@@ -1,0 +1,152 @@
+<div class="container-fluid admin-overview">
+  <h2 class="overview-title">📊 Admin Dashboard - Manage Courses</h2>
+
+  <div class="row" *ngFor="let category of viewcourse">
+    <div class="col-12 mt-4">
+      <h3 class="category-header">{{ category.categoryName }}</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" *ngFor="let course of category.courseList">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img class="card-img-top course-img" [src]="course.courseImage" alt="{{ course.courseName }}" />
+              <h5 class="card-title mt-2">{{ course.courseName }}</h5>
+            </div>
+            <div class="flip-card-back">
+              <h5>{{ course.courseName }}</h5>
+              <p><strong>Level:</strong> {{ course.courseLevel }}</p>
+              <p><strong>Price:</strong> ₹{{ course.coursePrice }}</p>
+              <p><strong>Duration:</strong> {{ course.courseDuration }}</p>
+
+              <div *ngIf="isRecentlyAdded(course)" class="recent-tag">
+                🆕 Recently Registered
+              </div>
+
+              <div class="d-flex justify-content-between mt-2">
+                <button class="btn btn-outline-light btn-sm" (click)="openUpdateModal(course, category.categoryName)">
+                  ✏️ Update
+                </button>
+                <button class="btn btn-outline-danger btn-sm"
+                  (click)="onDelete(course.courseId, category.categoryName)">
+                  🗑️ Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="add-card" (click)="openAddModal(category.categoryName)">
+          <div class="add-card-inner">
+            <div class="plus-icon">＋</div>
+            <div>Add Course</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" [ngClass]="{ 'show d-block': showModal }" *ngIf="showModal">
+    <div class="modal-dialog">
+      <div class="modal-content p-3 rounded-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Update Course</h5>
+          <button type="button" class="btn-close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form #updateForm="ngForm">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" [(ngModel)]="selectedCourse.courseName" name="name" id="name"
+                placeholder="Course Name">
+              <label for="name">Course Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" [(ngModel)]="selectedCourse.coursePrice" name="price" id="price"
+                placeholder="Course Price">
+              <label for="price">Course Price</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" [(ngModel)]="selectedCourse.courseDuration" name="duration"
+                id="duration" placeholder="Course Duration">
+              <label for="duration">Duration</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" [(ngModel)]="selectedCourse.courseLevel" name="level" id="level"
+                placeholder="Level">
+              <label for="level">Level</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" (click)="submitUpdate()">💾 Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" tabindex="-1" [ngClass]="{ 'show d-block': showAddModal }" *ngIf="showAddModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content p-4 rounded-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Add New Course</h5>
+          <button type="button" class="btn-close" (click)="closeAddModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form #addForm="ngForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input [(ngModel)]="newCourse.courseId" name="id" class="form-control" placeholder="Course ID">
+              </div>
+              <div class="col-md-6">
+                <input [(ngModel)]="newCourse.courseName" name="name" class="form-control" placeholder="Course Name">
+              </div>
+              <div class="col-md-6">
+                <input [(ngModel)]="newCourse.coursePrice" name="price" class="form-control" placeholder="Price">
+              </div>
+              <div class="col-md-6">
+                <input [(ngModel)]="newCourse.courseDuration" name="duration" class="form-control"
+                  placeholder="Duration">
+              </div>
+              <div class="col-md-6">
+                <input [(ngModel)]="newCourse.courseLevel" name="level" class="form-control" placeholder="Level">
+              </div>
+              <div class="col-md-6">
+                <input [(ngModel)]="newCourse.courseImage" name="image" class="form-control" placeholder="Image URL">
+              </div>
+              <div class="col-md-12">
+                <textarea [(ngModel)]="newCourse.courseDescription" name="desc" rows="2" class="form-control"
+                  placeholder="Description"></textarea>
+              </div>
+              <div class="col-md-12">
+                <input [(ngModel)]="newCourse.prerequisites" name="prerequisites" class="form-control"
+                  placeholder="Prerequisites">
+              </div>
+              <div class="col-md-12">
+                <input [(ngModel)]="newCourse.courseSyllabus" name="syllabus" class="form-control"
+                  placeholder="Syllabus (comma separated)">
+              </div>
+              <div class="col-md-12">
+                <input [(ngModel)]="newCourse.learningOutcomes" name="outcomes" class="form-control"
+                  placeholder="Learning Outcomes (comma separated)">
+              </div>
+              <div class="col-md-12">
+                <input [(ngModel)]="newCourse.toolsAndTechnologies" name="tools" class="form-control"
+                  placeholder="Tools (comma separated)">
+              </div>
+              <div class="col-md-12">
+                <input [(ngModel)]="newCourse.instructors" name="instructors" class="form-control"
+                  placeholder="Instructors (comma separated)">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" >➕ Add Course</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

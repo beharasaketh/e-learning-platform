@@ -1,0 +1,26 @@
+#navbar {
+    box-shadow: 0 4px 8px rgba(1, 1, 1, 0.4);
+}
+
+.navbar-nav .nav-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar-nav  .top-nav:hover{
+    background-color: orange;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+ .bottom-nav{
+    color: white;
+ }
+
+ .bottom-nav:hover{
+    color: orange !important;
+ }
+
+ .bottom-nav i {
+    color: inherit;
+}
+

@@ -1,0 +1,116 @@
+#navone {
+    height: 730px;
+    background-color: #233D8A;
+}
+
+#navtwo {
+    background: linear-gradient(to right, #233D8A, #4C6EDC, #ffffff);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 105%;
+    margin-left: -35px;
+    padding: 30px;
+    margin-top: -20px;
+
+}
+
+#logo {
+    margin-top: -220px;
+    width: 350px;
+}
+
+ul {
+    margin-top: -250px;
+    margin-left: 50px;
+}
+
+li {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: orange;
+}
+.profile-card {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #f9fbff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-pic {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.change-photo {
+  display: inline-block;
+  font-size: 14px;
+  color: #2a72ff;
+  text-decoration: none;
+}
+
+.change-photo:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.update-btn {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #2a72ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.update-btn:hover {
+  background-color: #1e5ae0;
+}
+

@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-2" style="position: fixed; z-index: 999;">
+    <nav class="navbar " id="navone">
+      <img class="img-fluid " src="Variation 03.png" alt="" id="logo">
+      <ul class="navbar-nav ">
+        <li class="nav-item"><a class="nav-link" routerLink="/user/home"><i class="fas fa-cog me-3" ></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/user/mylearning"><i class="fas fa-book-open me-3"></i>My courses</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" (click)="logout()"><i class="fas fa-sign-out-alt me-3"></i> Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-md-10 mt-3 ms-auto">
+    <nav class="navbar navbar-expand mb-auto" id="navtwo">
+
+      <h3 class="ms-auto me-5 text-dark text-muted">hello,{{userDetails.username}}</h3>
+    </nav>
+    <div class="profile-card">
+      <div class="profile-pic">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Photo">
+      </div>
+
+      <form ngNativeValidate #profileform="ngForm" (ngSubmit)="profileUpdated(profileform)">
+        <div class="form-group">
+          <label class="form-label">username</label>
+          <input class="form-control" type="text" name="u" value={{userDetails.username}} [(ngModel)]="userDetails.username">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-control" type="text" name="N" [(ngModel)]="userDetails.number" value={{userDetails.number}} placeholder="Phone Number"
+            required="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-control" type="text" name="e"  [(ngModel)]="userDetails.email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input class="form-control" type="text" name="p"  [(ngModel)]="userDetails.pass">
+        </div>
+
+        <button type="submit" class="update-btn" >Update profile</button>
+      </form>
+    </div>
+
+  </div>
+</div>

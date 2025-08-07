@@ -1,0 +1,58 @@
+<div class="overview-container">
+    <div class="recent-banner">
+        🎉 User <b>{{username}}</b> just registered for <b>Master Angular Bootcamp</b>
+    </div>
+    <div class="summary-grid pb-5">
+        <div class="summary-card courses">
+            <i class="fas fa-book"></i>
+            <h4>Total Courses</h4>
+            <p>{{ totalCourses }}</p>
+        </div>
+
+        <div class="summary-card instructors">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h4>Total Instructors</h4>
+            <p>{{ totalInstructors }}</p>
+        </div>
+
+        <div class="summary-card price">
+            <i class="fas fa-rupee-sign"></i>
+            <h4>Total Course Value</h4>
+            <p>₹{{ totalPrice }}</p>
+        </div>
+
+        <div class="summary-card duration">
+            <i class="fas fa-clock"></i>
+            <h4>Average Duration</h4>
+            <p>{{ averageDuration }} days</p>
+        </div>
+
+        <div class="summary-card categories">
+            <i class="fas fa-layer-group"></i>
+            <h4>Total Categories</h4>
+            <p>{{ allCourses.length }}</p>
+        </div>
+    </div>
+    <div *ngFor="let category of allCourses" class="category-section">
+        <h2 class="category-title">{{ category.categoryName }}</h2>
+        <div class="course-grid">
+            <div *ngFor="let course of category.courseList" class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img [src]="course.courseImage" alt="{{ course.courseName }}">
+                        <h3>{{ course.courseName }}</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>{{ course.courseName }}</h3>
+                        <p><strong>Duration:</strong> {{ course.courseDuration }}</p>
+                        <p><strong>Level:</strong> {{ course.courseLevel }}</p>
+                        <p><strong>Price:</strong> {{ course.coursePrice }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

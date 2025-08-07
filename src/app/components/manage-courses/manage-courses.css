@@ -1,0 +1,216 @@
+.admin-overview {
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.overview-title {
+  text-align: center;
+  color: #ffc107;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  animation: fadeDown 1s ease-in-out;
+}
+
+.category-header {
+  background: #ff9800;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(255, 152, 0, 0.5);
+  animation: fadeIn 1s ease;
+}
+
+.course-card {
+  background-color: #f5f5f5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.course-img {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-body {
+  color: #333;
+}
+
+.recent-tag {
+  background-color: #4caf50;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 8px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.admin-overview {
+  padding: 30px;
+  background: linear-gradient(to right, #f7f8fa, #e2e6f0);
+  min-height: 100vh;
+}
+
+.overview-title {
+  font-weight: 600;
+  color: #343a40;
+  border-left: 5px solid #007bff;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+.category-header {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.flip-card-front {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+
+.recent-tag {
+  background-color: #ffd700;
+  color: black;
+  padding: 4px 10px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.modal-content {
+  border-radius: 16px;
+}
+
+.form-floating label {
+  color: #666;
+}
+
+.add-card {
+  height: 300px;
+  border-radius: 20px;
+  border: 2px dashed #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-color: #f9f9f9;
+}
+.add-card:hover {
+  transform: scale(1.03);
+  background-color: #f0f0f0;
+}
+.add-card-inner {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #444;
+}
+.plus-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+

@@ -1,0 +1,66 @@
+.bubble-card {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.bubble-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.bubble-img-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.bubble-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bubble-card:hover .bubble-profile-img {
+  transform: scale(1.1);
+  filter: brightness(0.7);
+}
+
+.bubble-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent 40%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  transition: bottom 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 30px;
+}
+
+.bubble-card:hover .bubble-overlay {
+  bottom: 0;
+}
+
+.bubble-overlay h4 {
+  margin-bottom: 5px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.bubble-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}

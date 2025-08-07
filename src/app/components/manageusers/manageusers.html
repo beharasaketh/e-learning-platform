@@ -1,0 +1,21 @@
+<div class="container" *ngFor="let category of instructorData">
+  <h2 class="my-4">{{ category.categoryName }} – Instructors</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let course of category.courseList">
+      <div class="bubble-card" *ngFor="let instructor of course.instructors">
+        <div class="bubble-img-container">
+          <img [src]="instructor.profile" alt="{{ instructor.name }}" class="bubble-profile-img">
+        </div>
+        <div class="bubble-overlay">
+          <h4>{{ instructor.name }}</h4>
+          <p class="designation">{{ instructor.designation }}</p>
+          <p class="course-name">Teaches: {{ course.courseName }}</p>
+          <button class="btn btn-outline-light btn-sm mt-2"
+            (click)="editInstructor(instructor, course.courseId, category.categoryName)">
+            Edit Instructor
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
